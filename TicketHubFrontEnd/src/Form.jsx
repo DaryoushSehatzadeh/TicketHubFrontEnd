@@ -51,6 +51,7 @@ function Form() {
       alert('Form submitted successfully!')
       console.log(await response.json())
   
+      window.location.reload()
     } catch (err) {
       console.error('Error:', err)
       alert('An unexpected error occurred')
