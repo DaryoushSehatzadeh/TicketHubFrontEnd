@@ -17,6 +17,8 @@ function Form() {
     Country: ''
   })
 
+  const [submitted, setSubmitted] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -155,7 +157,7 @@ function Form() {
           />
         </div>
         <div className="col-md-3">
-          <label className="form-label">Security Code</label>
+          <label className="form-label">CVV</label>
           <input
             type="text"
             name="SecurityCode"
@@ -213,7 +215,7 @@ function Form() {
             value={formData.PostalCode}
             onChange={handleChange}
             required
-            pattern="(^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$)|(^\d{5}(-\d{4})?$)"
+            pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$|^\d{5}(-\d{4})?$"
             placeholder="A1A 1A1 or 12345"
           />
         </div>
